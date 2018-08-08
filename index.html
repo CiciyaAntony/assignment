@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ShoppingCart</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      text-align: center;
+       }
+   table{
+      align-self: center;
+      width:40%;
+     }
+   td{
+    font-style: normal;
+    font-size: 20px;
+     }
+   th{
+     font-style: normal;
+     font-size: 23px;
+     }
+   h3{
+     text-align: center;
+     }
+   p{
+      text-align: center;
+      font-size: 20px;
+    }
+  </style>
+  </head>
+  <body>
+    <h3>Shop the items you wish.....</h3>
+    <table id = "shopping" align = "center">
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </table>
+    <p id = "additem"></p>
+    </body>
+    <script type = "text/javascript">
+  		var table = document.getElementById('shopping');
+  		var items = [{pro:'Soap',price:15,qty:0},{pro:'Mirror',price:112,qty:0},{pro:'Towel',price:20,qty:0}];
+  		var q=1;
+      var count = 0;
+      var j= 1;
+  		document.getElementById('additem').innerHTML = "<b>Items in  cart :</b> " + 0;
+  		for (var i = 0; i < items.length; i++) {
+  			document.getElementById('shopping').innerHTML += "<tr><td>" + items[i].pro + "</td><td>" + items[i].price +"</td><td>" + items[i].qty + "</td><td><button onclick=incrementcount(" + q++ + ")>Add</button></td></tr>";
+  		}
+  		function incrementcount(j){
+        table.rows[j].cells[2].innerHTML++;
+  		  document.getElementById('additem').innerHTML = "<b>Items in  cart :</b> " + (++count);
+      }
+  	</script>
+</html>

@@ -1,0 +1,45 @@
+var table = document.getElementById("shopping");
+var items = [
+  { pro: "Soap", price: 15, qty: 0 },
+  { pro: "Mirror", price: 112, qty: 0 },
+  { pro: "Towel", price: 20, qty: 0 }
+];
+var q = 1;
+var count = 0;
+var j = 0;
+var k = 0;
+var pur = {
+  valueNames: ["prod", "pri", "qnty"]
+};
+var purchased = new List("con", pur);
+
+//document.getElementById("additem").innerHTML = "<b>Items in  cart :</b> " + 0;
+for (var i = 0; i < items.length; i++) {
+  document.getElementById("shopping").innerHTML +=
+    "<tr><td>" +
+    items[i].pro +
+    "</td><td>" +
+    items[i].price +
+    "</td><td><button id=mybutton" +
+    i +
+    ">Add to Cart</button></td></tr>";
+}
+for (var j in items) {
+  var bu = document.getElementById("mybutton" + j);
+  bu.onclick = function incrementcount() {
+    document.getElementById("cartbutton").innerHTML =
+      "<b>Items in  cart :</b> " + ++count;
+    purchased.add({
+      prod: items[i].pro,
+      pri: items[i].price,
+      qnty: 1
+    });
+    k++;
+  };
+}
+
+var carbu = document.getElementById("cartbutton");
+carbu.onclick = function nextpage() {
+  window.location = "cart.html";
+};
+
