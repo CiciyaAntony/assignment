@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Productlist from './productlist.js';
-//import Type from'./Type';
+
 
 export default class Displaying extends Component{
 
