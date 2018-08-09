@@ -9,7 +9,7 @@ export default class Productlist extends Component{
     if(products.inStock)
     {
        name=products.name;
-       
+
     }
     else
       {
@@ -17,16 +17,16 @@ export default class Productlist extends Component{
       }
 
     return(
-      <div>
-      <table>
-      <tbody>
-      <tr>
+
+
+
+<tr>
     <td>{name}</td>
     <td>{products.price}</td>
-    </tr>
-    </tbody>
-    </table>
-    </div>
+  </tr>
+
+
+
     );
 
   }
