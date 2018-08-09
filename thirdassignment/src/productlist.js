@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 
 export default class Productlist extends Component{
+
   render(){
+ let id =0;
     const products = this.props.products;
     //console.log(products);
   var name;
@@ -21,8 +23,8 @@ export default class Productlist extends Component{
 
 
 <tr>
-    <td>{name}</td>
-    <td>{products.price}</td>
+    <td key={id++}>{name}</td>
+    <td key={id++}>{products.price}</td>
   </tr>
 
 
